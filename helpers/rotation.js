@@ -28,25 +28,3 @@ var rotate = function(face, direction) {
 }
 
 module.exports = rotate;
-
-
-
-// function flip(face, direction) {
-//   switch (direction) {
-//     case 'VERTICAL':
-//       var tempFace = [];
-      
-//       tempFace[0] = face[6];
-//       tempFace[1] = face[3];
-//       tempFace[2] = face[0];
-//       tempFace[3] = face[7];
-//       tempFace[4] = face[4];
-//       tempFace[5] = face[1];
-//       tempFace[6] = face[8];
-//       tempFace[7] = face[5];
-//       tempFace[8] = face[2];
-//       return tempFace;
-
-//     case 'HORIZONTAL':
-//   }
-// }

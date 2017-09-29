@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Rubic Cube</title>
+    <style>
+      body {
+        background: #456473;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .face {
+        height: 300px;
+        width: 300px;
+        margin: auto;
+        padding-top: 3px;
+        background: black;
+        border: 2px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+
+        box-shadow: 5px 5px 35px 0.1px #212121;
+      }
+
+      .row {
+        height: 100px;
+        width: 300px;
+        margin: 0;
+      }
+
+      .square {
+        display: inline;
+        height: 93px;
+        width: 93px;
+        margin: 0;        
+        color: white;
+        border: 3px solid rgba(255,255,255,0.2);
+        border-radius: 5px;
+
+        box-shadow: inset -2px -2px 10px 0.1px rgba(0,0,0,0.4);
+      }
+      .square:focus {
+        outline: none;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <div class="face">
+        <div class="row">
+          <button class="square" style="background: <%= face[0] %>"></button>
+          <button class="square" style="background: <%= face[1] %>"></button>
+          <button class="square" style="background: <%= face[2] %>"></button>
+        </div>
+        <div class="row">
+          <button class="square" style="background: <%= face[3] %>"></button>
+          <button class="square" style="background: <%= face[4] %>"></button>
+          <button class="square" style="background: <%= face[5] %>"></button>
+        </div>
+        <div class="row">
+          <button class="square" style="background: <%= face[6] %>"></button>
+          <button class="square" style="background: <%= face[7] %>"></button>
+          <button class="square" style="background: <%= face[8] %>"></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
