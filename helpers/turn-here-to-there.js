@@ -1,15 +1,17 @@
-var leftToBack = function(leftFace) {
-  var backFace = [];
+var turnAround = function(face) {
+  var turnedFace = [];
 
-  backFace[0] = leftFace[8];
-  backFace[1] = leftFace[7];
-  backFace[2] = leftFace[6];
-  backFace[3] = leftFace[5];
-  backFace[4] = leftFace[4];
-  backFace[5] = leftFace[3];
-  backFace[6] = leftFace[2];
-  backFace[7] = leftFace[1];
-  backFace[8] = leftFace[0];
+  turnedFace[0] = face[8];
+  turnedFace[1] = face[7];
+  turnedFace[2] = face[6];
+  turnedFace[3] = face[5];
+  turnedFace[4] = face[4];
+  turnedFace[5] = face[3];
+  turnedFace[6] = face[2];
+  turnedFace[7] = face[1];
+  turnedFace[8] = face[0];
 
-  return backFace;
+  return turnedFace;
 }
+
+module.exports = turnAround;

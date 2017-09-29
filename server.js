@@ -1,6 +1,8 @@
 var express = require('express');
 var up = require('./moves/up-down.js').up;
 var down = require('./moves/up-down.js').down;
+var left = require('./moves/left-right.js').left;
+var right = require('./moves/left-right.js').right;
 
 var app = express();
 
@@ -37,20 +39,18 @@ app.get('/up', function(req, res) {
   cube = up(cube);
   res.json(cube);
 });
-
-
 app.get('/down', function(req, res) {
   cube = down(cube);
   res.json(cube);
-})
-
-// app.get('/left', function(req, res) {
-
-// })
-
-// app.post('/right', function(req, res) {
-
-// });
+});
+app.get('/left', function(req, res) {
+  cube = left(cube);
+  res.json(cube);
+});
+app.get('/right', function(req, res) {
+  cube = right(cube);
+  res.json(cube);
+});
 
 
 
