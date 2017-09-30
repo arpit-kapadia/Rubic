@@ -10,12 +10,12 @@ var turnUp = function(cube, line) {
   var left = line == 'LEFT' ? rotate(cube.left, 'CLOCKWISE') : cube.left;
 
   var rotatedCube = {
-  front: front,
-  top: top,
-  back: back,
-  bottom: bottom,
-  left: left,
-  right: right
+    front: front,
+    top: top,
+    back: back,
+    bottom: bottom,
+    left: left,
+    right: right
   };
 
   return rotatedCube;

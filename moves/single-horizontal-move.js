@@ -43,7 +43,6 @@ var turnRight = function(cube, line) {
   return rotatedCube;
 }
 
-
 module.exports = {
   turnLeft: turnLeft,
   turnRight: turnRight

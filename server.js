@@ -120,7 +120,14 @@ app.get('/bottomRight', function(req, res) {
   res.render('front.ejs', {face: cube.front});
 })
 
-
-// app.get('/startAgain', function(req, res) {
-
-// })
+app.get('/solved', function(req, res) {
+  cube = {
+    front: ['red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red'],
+    back: ['blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue'],
+    top: ['green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green'],
+    bottom: ['yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow'],
+    left: ['white', 'white', 'white', 'white', 'white', 'white', 'white', 'white', 'white'],
+    right: ['orange', 'orange', 'orange', 'orange', 'orange', 'orange', 'orange', 'orange', 'orange']
+  };
+  res.render('front.ejs', {face: cube.front});
+})
