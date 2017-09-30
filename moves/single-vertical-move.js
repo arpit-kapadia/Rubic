@@ -22,10 +22,10 @@ var turnUp = function(cube, line) {
 }
 
 var turnDown = function(cube, line) {
-  var front = verticalTurnHelper(cube.bottom, cube.front, line);
-  var top = verticalTurnHelper(cube.front, cube.top, line);
-  var bottom = verticalTurnHelper(cube.back, cube.bottom, line);
-  var back = verticalTurnHelper(cube.top, cube.back, line);
+  var front = verticalTurnHelper(cube.front, cube.top, line);
+  var top = verticalTurnHelper(cube.top, cube.back, line);
+  var bottom = verticalTurnHelper(cube.bottom, cube.front, line);
+  var back = verticalTurnHelper(cube.back, cube.bottom, line);
   var right = line == 'RIGHT' ? rotate(cube.right, 'ANTI_CLOCKWISE') : cube.right;
   var left = line == 'LEFT' ? rotate(cube.left, 'CLOCKWISE') : cube.left;
 

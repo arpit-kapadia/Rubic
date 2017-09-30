@@ -31,10 +31,8 @@ var cube = {
 
 // APIs
 app.get('/', function(req, res) {
-  // res.json(cube);
   res.render('front.ejs', {face: cube.front});
 });
-
 
 
 app.listen('8008', function(err) {
@@ -43,75 +41,53 @@ app.listen('8008', function(err) {
 });
 
 
-
-
-
-
 app.get('/up', function(req, res) {
   cube = up(cube);
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 });
 app.get('/down', function(req, res) {
   cube = down(cube);
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 });
 app.get('/left', function(req, res) {
   cube = left(cube);
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 });
 app.get('/right', function(req, res) {
   cube = right(cube);
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 });
-
-
-
-
 
 
 app.get('/leftUp', function(req, res) {
   cube = turnUp(cube, 'LEFT');
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 })
 
 app.get('/leftDown', function(req, res) {
   cube = turnDown(cube, 'LEFT');
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 })
 
 app.get('/middleUp', function(req, res) {
   cube = turnUp(cube, 'MIDDLE');
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 })
 
 app.get('/middleDown', function(req, res) {
   cube = turnDown(cube, 'MIDDLE');
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 })
 
 app.get('/rightUp', function(req, res) {
   cube = turnUp(cube, 'RIGHT');
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 })
 
 app.get('/rightDown', function(req, res) {
   cube = turnDown(cube, 'RIGHT');
   res.render('front.ejs', {face: cube.front});
-  // res.json(cube);
 })
-
-
-
-
 
 
 app.get('/topLeft', function(req, res) {
@@ -134,7 +110,6 @@ app.get('/middleRight', function(req, res) {
   res.render('front.ejs', {face: cube.front});
 })
 
-
 app.get('/bottomLeft', function(req, res) {
   cube = turnLeft(cube, 'BOTTOM');
   res.render('front.ejs', {face: cube.front});
@@ -144,18 +119,6 @@ app.get('/bottomRight', function(req, res) {
   cube = turnRight(cube, 'BOTTOM');
   res.render('front.ejs', {face: cube.front});
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // app.get('/startAgain', function(req, res) {

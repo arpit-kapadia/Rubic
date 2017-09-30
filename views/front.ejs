@@ -1,29 +1,12 @@
 <html>
   <head>
     <title>Rubic Cube</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <style>
       body {
         background: #456473;
         text-align: center;
         padding: 20px;
-      }
-
-      .face {
-        height: 300px;
-        width: 300px;
-        margin: auto;
-        padding-top: 3px;
-        background: black;
-        border: 2px solid rgba(255,255,255,0.2);
-        border-radius: 10px;
-
-        box-shadow: 5px 5px 35px 0.1px #212121;
-      }
-
-      .row {
-        height: 100px;
-        width: 300px;
-        margin: 0;
       }
 
       .square {
@@ -32,35 +15,148 @@
         width: 93px;
         margin: 0;        
         color: white;
-        border: 3px solid rgba(255,255,255,0.2);
-        border-radius: 5px;
+        border: 3px solid rgba(0,0,0,0.4);
+        border-radius: 8px;
 
-        box-shadow: inset -2px -2px 10px 0.1px rgba(0,0,0,0.4);
+        box-shadow: inset -1px -1px 10px 0.1px rgba(0,0,0,0.5);
       }
+
+      .row {
+        text-align: center;
+        height: 100px;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      .face {
+        height: 300px;
+        width: 295px;
+        margin: auto;
+        padding-top: 1px;
+        background: #111111;
+        border: 2px solid rgba(0,0,0,0.8);
+        border-radius: 15px;
+
+        box-shadow: 20px 15px 95px 0.2px black;
+      }
+
+      .turn-button {
+        background: rgba(255, 255, 255, 0.25);
+        color: #212121;
+        width: 30px;
+        height: 30px;
+        margin: 6px;
+        border: none;
+        margin-top: 15px;
+
+        box-shadow: 1px 1px 10px 0.1px rgba(0,0,0,0.4), inset -1px -1px 10px 0.1px rgba(255,255,255,0.28);
+      }
+      .turn-button:focus{
+        outline: none;
+        background: rgba(255,255,255,0.15);
+      }
+
       .square:focus {
         outline: none;
       }
+
+      .container {
+        width: 600px;
+        margin: auto;
+      }
+
+      .horizontal-buttons {
+        width: 70px;
+        margin-top: 35px;
+      }
+
+      .vertical-buttons {
+        height: 70px;
+      }
+
+      .right-buttons {
+        border-radius: 50% 100% 100% 50%;
+        height: 70px;
+      }
+
+      .left-buttons {
+        border-radius: 100% 50% 50% 100%;
+        height: 70px;
+      }
+
+      .top-buttons {
+        border-radius: 100% 100% 50% 50%;
+        width: 70px;
+        margin-top: 35px;
+      }
+
+      .bottom-buttons {
+        border-radius: 50%  50% 100% 100%;
+        width: 70px;
+        margin-top: 35px;
+      }
+
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
   </head>
   <body>
-    <div>
-      <div class="face">
-        <div class="row">
-          <button class="square" style="background: <%= face[0] %>"></button>
-          <button class="square" style="background: <%= face[1] %>"></button>
-          <button class="square" style="background: <%= face[2] %>"></button>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+          <div class="row top-row-buttons">
+            <a href="/leftUp"><button class="turn-button top-buttons"></button></a>
+            <a href="/middleUp"><button class="turn-button top-buttons"></button></a>
+            <a href="/rightUp"><button class="turn-button top-buttons"></button></a>
+          </div>
         </div>
-        <div class="row">
-          <button class="square" style="background: <%= face[3] %>"></button>
-          <button class="square" style="background: <%= face[4] %>"></button>
-          <button class="square" style="background: <%= face[5] %>"></button>
+        <div class="col-xs-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-2 leftCol">
+          <div class="row"><a href="/topLeft"><button class="turn-button left-buttons"></button></a></div>
+          <div class="row"><a href="/middleLeft"><button class="turn-button left-buttons"></button></a></div>
+          <div class="row"><a href="/bottomLeft"><button class="turn-button left-buttons"></button></a></div>
         </div>
-        <div class="row">
-          <button class="square" style="background: <%= face[6] %>"></button>
-          <button class="square" style="background: <%= face[7] %>"></button>
-          <button class="square" style="background: <%= face[8] %>"></button>
+        <div class="col-xs-8 container-fluid">
+          <div class="face">        
+            <div class="row">
+              <button class="square" style="background: <%= face[0] %>"></button>
+              <button class="square" style="background: <%= face[1] %>"></button>
+              <button class="square" style="background: <%= face[2] %>"></button>
+            </div>
+            <div class="row">
+              <button class="square" style="background: <%= face[3] %>"></button>
+              <button class="square" style="background: <%= face[4] %>"></button>
+              <button class="square" style="background: <%= face[5] %>"></button>
+            </div>
+            <div class="row">
+              <button class="square" style="background: <%= face[6] %>"></button>
+              <button class="square" style="background: <%= face[7] %>"></button>
+              <button class="square" style="background: <%= face[8] %>"></button>
+            </div>        
+          </div>
         </div>
+        <div class="col-xs-2 rightCol">
+          <div class="row"><a href="/topRight"><button class="turn-button right-buttons"></button></a></div>
+          <div class="row"><a href="/middleRight"><button class="turn-button right-buttons"></button></a></div>
+          <div class="row"><a href="/bottomRight"><button class="turn-button right-buttons"></button></a></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+          <div class="row bottom-row-buttons">
+           <a href="/leftDown"><button class="turn-button bottom-buttons"></button></a>
+            <a href="/middleDown"><button class="turn-button bottom-buttons"></button></a>
+            <a href="/rightDown"><button class="turn-button bottom-buttons"></button></a>
+          </div>
+        </div>
+        <div class="col-xs-2"></div>
       </div>
     </div>
   </body>
